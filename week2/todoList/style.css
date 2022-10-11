@@ -52,14 +52,19 @@ section{
 }
 
 .left{
-    /* flex-grow: 1; */
+    width: 50%;
     height: 500px;
     border-right: 1px solid lightgray;
 }
 
 .right{
-    /* flex-grow: 1; */
+    width: 50%;
     height: 500px;
+}
+
+.hidden{
+    overflow: hidden;
+    width: 0;
 }
 
 .todo-header{

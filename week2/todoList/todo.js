@@ -1,9 +1,11 @@
 function useTodoList({ container, input, submit, deleteBtn }) {
   const onAdd = (event) => {
+    // event.target => span 아이콘
     let parentContainer =
       event.target.parentElement.parentElement.parentElement;
     let realContainer = parentContainer.querySelector(".todo-list");
 
+    //부모 요소가 오늘인지 내일인지 확인
     let realInput = null;
     if (parentContainer.className == "left") {
       realInput = input[0];
@@ -13,19 +15,25 @@ function useTodoList({ container, input, submit, deleteBtn }) {
 
     const currentValue = realInput.value;
 
-    const currentLi = document.createElement("li");
-    currentLi.classList.add("todo__item");
-    currentLi.innerHTML = currentValue;
+    if (currentValue == "" || currentValue == null) {
+      return; //입력한 데이터가 없을 시 추가 기능 수행 X
+    } else {
+      const currentLi = document.createElement("li");
+      currentLi.classList.add("todo__item");
+      currentLi.innerHTML = currentValue;
 
-    const currentDeleteButton = document.createElement("button");
-    currentDeleteButton.classList.add("todo__item__btn-delete");
-    currentDeleteButton.innerHTML = `<span class="material-icons"></span>`;
-    currentDeleteButton.addEventListener("click", onDelete);
+      const currentDeleteButton = document.createElement("button");
+      currentDeleteButton.classList.add("todo__item__btn-delete");
+      currentDeleteButton.innerHTML = `<span class="material-icons"></span>`;
+      currentDeleteButton.addEventListener("click", onDelete);
 
-    // currentDeleteButton.addEventListener("click",currentLi)
-    currentLi.appendChild(currentDeleteButton);
+      currentLi.appendChild(currentDeleteButton);
 
-    realContainer.appendChild(currentLi);
+      realContainer.appendChild(currentLi);
+
+      realInput.value = null;
+      event = null;
+    }
   };
 
   const onDelete = (event) => {
@@ -34,7 +42,7 @@ function useTodoList({ container, input, submit, deleteBtn }) {
   };
 
   for (let i = 0; i < submit.length; i++) {
-    submit[i].addEventListener("click", onAdd);
+    submit[i].querySelector("span").addEventListener("click", onAdd);
   }
   for (let i = 0; i < deleteBtn.length; i++) {
     deleteBtn[i].addEventListener("click", onDelete);
