@@ -52,13 +52,13 @@ section{
 }
 
 .left{
-    width: 50%;
+    width: 100%;
     height: 500px;
     border-right: 1px solid lightgray;
 }
 
 .right{
-    width: 50%;
+    width: 100%;
     height: 500px;
 }
 

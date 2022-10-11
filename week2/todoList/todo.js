@@ -49,21 +49,30 @@ function useTodoList({ container, input, submit, deleteBtn }) {
   }
 }
 
-function useViewState({ left, right }) {
-  //   console.log(left);
-  //   const hidden = (e) => {
-  //     console.log("냐냐");
-  //   };
-  //   left.addEventListner("click", hidden);
+function useViewState({ left, right, btn }) {
+  const onView = (event) => {
+    if (event.target.className == "btn-today") {
+      right.className = "hidden";
+      left.className = "left";
+    } else if (event.target.className == "btn-tomorrow") {
+      right.className = "right";
+      left.className = "hidden";
+    } else if (event.target.className == "btn-all") {
+      right.className = "right";
+      left.className = "left";
+    }
+  };
+
+  for (let i = 0; i < 3; i++) {
+    btn[i].addEventListener("click", onView);
+  }
 }
 
 function main() {
-  let test = document.querySelectorAll(".todo__item__btn-delete");
-  console.log(test);
-
   useViewState({
     left: document.querySelector(".left"),
     right: document.querySelector(".right"),
+    btn: document.querySelectorAll("nav button"),
   });
 
   useTodoList({
