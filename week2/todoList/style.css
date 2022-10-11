@@ -52,13 +52,13 @@ section{
 }
 
 .left{
-    flex-grow: 1;
+    /* flex-grow: 1; */
     height: 500px;
     border-right: 1px solid lightgray;
 }
 
 .right{
-    flex-grow: 1;
+    /* flex-grow: 1; */
     height: 500px;
 }
 
