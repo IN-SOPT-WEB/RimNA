@@ -1,0 +1,135 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+body{
+    font-family: 'nanumsquare';
+}
+
+header{
+    background-color:rgb(147, 185, 164);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    color: white;
+}
+
+nav{
+    display: flex;
+    height: 60px;
+    place-items: center;
+    justify-content: center;
+}
+
+nav > button{
+    background-color: rgb(86, 146, 86);
+    border: 1.5px solid rgb(86, 146, 86);
+    border-radius: 20px;
+    padding: 8px;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+nav > button:hover{
+    background-color: white;
+    color:rgb(86, 146, 86);
+    transition: 400ms ease-in-out, color 400ms ease-in-out;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left{
+    flex-grow: 1;
+    height: 500px;
+    border-right: 1px solid lightgray;
+}
+
+.right{
+    flex-grow: 1;
+    height: 500px;
+}
+
+.todo-header{
+    padding-left: 20px;
+}
+
+.todo-list{
+    list-style:none;
+    padding:0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.todo__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    flex-grow: 5;
+    width: 70%;
+}
+
+.todo__item:not(:last-child){
+    border-bottom: 1px dashed lightgray;
+}
+
+.todo__item>.todo__item__btn-delete{
+    background-color: white;
+    border: none;
+}
+
+.todo-add-group{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.todo-add-group__input{
+    flex-grow: 5;
+    outline: none;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgb(238, 238, 238);
+    border-right: 2px solid rgb(185, 184, 184);
+}
+
+.todo-add-group__btn-add{
+    flex-grow: 1;
+    outline: none;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.todo-footer{
+    background-color:rgb(147, 185, 164);
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    cursor: pointer;
+}
+
+.footer-text{
+    color: rgb(221, 221, 221);
+    opacity: 50%;
+}
