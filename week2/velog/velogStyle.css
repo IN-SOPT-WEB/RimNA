@@ -23,6 +23,9 @@ button{
     border-radius: 15px;
     height: 2rem;
     padding: 0 1rem 0 1rem;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
 }
 
 .header-group__btn-profile {
