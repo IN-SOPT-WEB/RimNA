@@ -40,10 +40,18 @@
             </span>
             최신
         </button>
-        <button class="nav__btn-thisweek">이번주<span class="material-symbols-outlined">
-            expand_more
-            </span>
-        </button>
+        <section class="select">
+            <section class="selected">
+              <div class="selected-value">오늘</div>
+              <div class="arrow"></div>
+            </section>
+            <ul>
+              <li class="option">오늘</li>
+              <li class="option">이번 주</li>
+              <li class="option">이번 달</li>
+              <li class="option">올해</li>
+            </ul>
+          </section>
     </nav>
     <main>
         <section class="post-card">
@@ -159,5 +167,6 @@
             </footer>
         </section>
     </main>
+    <script type="module" src="velog.js"></script>
 </body>
 </html>
