@@ -59,6 +59,37 @@ function useModal({ post, bg, body }) {
   }
 }
 
+function useSlider({ box, cards, prev, next }) {
+  const movePrev = () => {
+    if (parseInt(cards.style.left) < 0) {
+      box.style.overflow = "auto";
+      let cardsLeft = parseInt(getComputedStyle(cards).left);
+
+      let num = cardsLeft + 290;
+      cards.style.left = `${num}px`;
+
+      box.style.overflow = "hidden";
+    }
+  };
+  const moveNext = () => {
+    if (
+      (parseInt(cards.style.left) <= 0 && parseInt(cards.style.left) > -300) ||
+      cards.style.left == ""
+    ) {
+      box.style.overflow = "auto";
+      let cardsLeft = parseInt(getComputedStyle(cards).left);
+
+      let num = cardsLeft - 290;
+      cards.style.left = `${num}px`;
+
+      box.style.overflow = "hidden";
+    }
+  };
+
+  prev.addEventListener("click", movePrev);
+  next.addEventListener("click", moveNext);
+}
+
 function main() {
   useSelect({
     box: document.querySelectorAll(".select"),
@@ -68,6 +99,12 @@ function main() {
     post: document.querySelectorAll(".post-card"),
     bg: document.querySelector(".close-modal"),
     body: document.querySelector("body"),
+  });
+  useSlider({
+    box: document.querySelector(".slider-box"),
+    cards: document.querySelector(".slider__cards"),
+    prev: document.querySelector(".slider__prev"),
+    next: document.querySelector(".slider__next"),
   });
 }
 

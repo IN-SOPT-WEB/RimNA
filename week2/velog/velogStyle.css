@@ -303,18 +303,67 @@ main{
     font-size: large;
 }
 
-.slider{
-    display:inline;
-    flex-direction: row;
+.slider-box{
+    height: 500px;
+    width: 900px;
+    position: relative;
     overflow: hidden;
+    margin: 50px auto;
+
 }
 
-.slider > .post-card{
-    margin: 0;
+.slider-box .slider__cards{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2500px; 
+    transition-duration: 0.5s;
+  /* transition-delay: 0.5s; */
+
+}
+
+.slider-box .slider__cards .post-card{
+    width:290px;
+    display: inline-block;
+    /* margin: 0; */
+}
+
+.controller span{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    /* border-radius: 50%; */
+    padding: 10px 20px;
+    font-size: 1.3em;
+    cursor: pointer;
+    height: 380px;
+  }
+
+.slider__prev{
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    cursor: pointer;
+    font-size: 60px;
+}
+
+.controller span:hover{
+    background-color: rgba(50, 50, 50, 0.11);
+  }
+
+.slider__next{
+    right:1px;
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    cursor: pointer;
+    font-size: 60px;
 }
 
 @media all and (min-width: 321px) and (max-width: 768px) {
-    .post-card{
+    main .post-card{
         width: 100%;
         flex-grow: 1;
     }
@@ -323,7 +372,7 @@ main{
     }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-    .post-card{
+    main .post-card{
         width: 45%;
         flex-grow: 1;
     }
@@ -333,7 +382,7 @@ main{
     }
 }
 @media (min-width: 1025px) {
-    .post-card{
+    main .post-card{
         width: 30%;
         flex-grow: 30%;
     }
