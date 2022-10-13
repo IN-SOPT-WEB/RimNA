@@ -49,17 +49,22 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition:all 400ms;
+
 }
 
 .left{
     width: 100%;
     height: 500px;
     border-right: 1px solid lightgray;
+    transition:all 400ms;
 }
 
 .right{
     width: 100%;
     height: 500px;
+    transition:all 400ms;
+
 }
 
 .hidden{
