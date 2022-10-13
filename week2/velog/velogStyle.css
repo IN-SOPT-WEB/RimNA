@@ -145,8 +145,8 @@ ul {
   
   .select .selected .arrow {
     width: 24px;
-    background: url("https://uxwing.com/wp-content/themes/uxwing/download/02-arrow-direction/arrow-bottom.png") no-repeat 70% 50%;
-    background-size: 50% 50%;
+    color: gray;
+    cursor: pointer;
   }
   
   .select ul {
@@ -301,6 +301,16 @@ main{
     outline: none;
     border: none;
     font-size: large;
+}
+
+.slider{
+    display:inline;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.slider > .post-card{
+    margin: 0;
 }
 
 @media all and (min-width: 321px) and (max-width: 768px) {

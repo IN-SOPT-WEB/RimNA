@@ -1,12 +1,13 @@
 function useSelect({ box }) {
   const toggleSelectBox = (selectBox) => {
+    //active가 없으면 add, 있으면 remove
     selectBox.classList.toggle("active");
   };
 
   const selectOption = (optionElement) => {
-    const selectBox = optionElement.closest(".select");
+    const selectBox = optionElement.closest(".select"); //선택된 option 에서 가장 가까운 select 클래스
     const selectedElement = selectBox.querySelector(".selected-value");
-    selectedElement.textContent = optionElement.textContent;
+    selectedElement.textContent = optionElement.textContent; //새로 선택된 내용으로 바꿔주기
   };
 
   box.forEach((selectBoxElement) => {
