@@ -1,23 +1,22 @@
-import Header from "./components/header/Header";
-import Content from "./components/content/Content";
+import { Main, Score, Bottom } from "./components/index";
 import styled from "styled-components";
 
-function App() {
+export default function Content() {
   return (
     <Background>
-      <Header />
-      <Content />
+      <Score></Score>
+      <Main></Main>
+      <Bottom></Bottom>
     </Background>
   );
 }
-
-export default App;
 
 const Background = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  background-color: #cdcdea;
+  background-color: #9292d4;
 `;
