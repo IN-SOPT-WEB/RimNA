@@ -3,10 +3,17 @@ import styled from "styled-components";
 
 function Score() {
   return (
-    <>
-      <div>당신의 점수는??:</div>
-    </>
+    <Background>
+      <h3>현재 점수 : 0점</h3>
+    </Background>
   );
 }
 
 export default Score;
+
+const Background = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #8686ff; */
+`;
