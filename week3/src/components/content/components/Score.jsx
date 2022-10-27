@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-function Score() {
+function Score({ score }) {
   return (
     <Background>
-      <h3>현재 점수 : 0점</h3>
+      <h3>현재 점수 : {score}점</h3>
     </Background>
   );
 }

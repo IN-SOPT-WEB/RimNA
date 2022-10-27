@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export default function Bottom() {
-  return <RestartButton>다시하기</RestartButton>;
+export default function Bottom({ score, setScore }) {
+  const onReset = () => {
+    setScore(0);
+    console.log("다시하자");
+  };
+  return <RestartButton onClick={() => onReset()}>다시하기</RestartButton>;
 }
 
 const RestartButton = styled.button`

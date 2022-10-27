@@ -1,5 +1,6 @@
 import { Main, Score, Bottom } from "./components/index";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 export default function Content() {
   const questionList = [
@@ -13,13 +14,36 @@ export default function Content() {
       answer: "피카츄",
       choices: ["리자몽", "피카츄", "팽도리", "라이츄", "지우"],
     },
+    {
+      img: "쿠로미.jpeg",
+      answer: "쿠로미",
+      choices: ["폼폼푸린", "시나모롤", "쿠로미", "바츠마루", "헬로키티"],
+    },
+    {
+      img: "미소.jpeg",
+      answer: "미소",
+      choices: ["미소", "웃음", "행복", "키키", "우하하"],
+    },
   ];
+
+  const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    console.log("score is change");
+  }, [score, setScore]);
 
   return (
     <Background>
-      <Score></Score>
-      <Main questionList={questionList}></Main>
-      <Bottom></Bottom>
+      <Score score={score}></Score>
+      <Main
+        questionList={questionList}
+        score={score}
+        setScore={setScore}
+      ></Main>
+      <Bottom
+        score={score}
+        setScore={setScore}
+      ></Bottom>
     </Background>
   );
 }
