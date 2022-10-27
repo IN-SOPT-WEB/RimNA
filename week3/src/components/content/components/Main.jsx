@@ -1,19 +1,39 @@
 import React from "react";
 import styled from "styled-components";
+import { useState } from "react";
+import ModalPortal from "./Portal";
+import Modal from "./Modal";
 
 export default function Main({ questionList, setScore, score }) {
   const onAnswerClick = (value) => {
     if (value === questionList[score].answer) {
-      console.log("정답입니다");
+      setModalMessage("정답");
+      setModalOn(!modalOn);
       const newScore = score + 1;
       setScore(newScore);
     } else {
-      console.log("틀렸습니당");
+      setModalMessage("오답");
+      setModalOn(!modalOn);
     }
+  };
+
+  const [modalOn, setModalOn] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
+  const handleModal = () => {
+    setModalOn(!modalOn);
   };
 
   return (
     <>
+      <ModalPortal>
+        {modalOn && (
+          <Modal
+            onClose={handleModal}
+            modalMessage={modalMessage}
+          />
+        )}
+      </ModalPortal>
       {score === 4 ? (
         <>
           <Finish>왕 다 맞췄다</Finish>

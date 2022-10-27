@@ -28,9 +28,7 @@ export default function Content() {
 
   const [score, setScore] = useState(0);
 
-  useEffect(() => {
-    console.log("score is change");
-  }, [score, setScore]);
+  useEffect(() => {}, [score, setScore]);
 
   return (
     <Background>
