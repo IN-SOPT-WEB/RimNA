@@ -38,7 +38,7 @@ export default function Main({ questionList, setScore, score }) {
           />
         )}
       </ModalPortal>
-      {score === 4 ? (
+      {score === 5 ? (
         <>
           <Finish>왕 다 맞췄다</Finish>
         </>

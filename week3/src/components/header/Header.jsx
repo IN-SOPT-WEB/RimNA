@@ -18,5 +18,5 @@ const Background = styled.div`
 const Title = styled.img`
   /* color: #404040; */
   /* width: 100px; */
-  height: 100px;
+  height: 7em;
 `;

@@ -24,6 +24,11 @@ export default function Content() {
       answer: "미소",
       choices: ["미소", "웃음", "행복", "키키", "우하하"],
     },
+    {
+      img: "루피.jpeg",
+      answer: "루피",
+      choices: ["기영이", "루피", "기철이", "포비", "에디"],
+    },
   ];
 
   const [score, setScore] = useState(0);
