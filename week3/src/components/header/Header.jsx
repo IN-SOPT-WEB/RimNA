@@ -3,15 +3,20 @@ import styled from "styled-components";
 export default function Header() {
   return (
     <Background>
-      <Title>나 누구겡 👁👅👁</Title>
+      <Title
+        src="Logo.png"
+        alt="logo"
+      ></Title>
     </Background>
   );
 }
 
 const Background = styled.div`
-  padding: 3rem;
+  padding: 1rem;
 `;
 
-const Title = styled.h2`
-  color: #404040;
+const Title = styled.img`
+  /* color: #404040; */
+  /* width: 100px; */
+  height: 100px;
 `;

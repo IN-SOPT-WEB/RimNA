@@ -15,5 +15,8 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #8686ff; */
+  padding: 0.1rem 3rem 0.1rem 3rem;
+  border-radius: 30px;
+  color: #4e4e4e;
+  background-color: #dad4f9;
 `;
