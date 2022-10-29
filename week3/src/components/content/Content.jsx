@@ -56,7 +56,9 @@ const Background = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 1rem;
+  /* gap: 3rem; */
   align-items: center;
   background-color: #eaf0ff;
 `;

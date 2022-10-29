@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Score({ score }) {
   return (
     <Background>
-      <h3>현재 점수 : {score}점</h3>
+      <ScoreText>현재 점수 : {score}점</ScoreText>
     </Background>
   );
 }
@@ -15,8 +15,12 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.1rem 3rem 0.1rem 3rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
   border-radius: 30px;
-  color: #4e4e4e;
+  color: #3a3a3a;
   background-color: #dad4f9;
+`;
+
+const ScoreText = styled.h3`
+  margin: 0px;
 `;
