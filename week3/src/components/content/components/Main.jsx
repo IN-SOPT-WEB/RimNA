@@ -40,7 +40,8 @@ export default function Main({ questionList, setScore, score }) {
       </ModalPortal>
       {score === 5 ? (
         <>
-          <Finish>왕 다 맞췄다</Finish>
+          <ImageBox src="축하.gif" />
+          <h2>축하합니다! 문제를 다 맞췄어요!</h2>
         </>
       ) : (
         <>
@@ -75,6 +76,7 @@ const AnswerBox = styled.button`
   cursor: pointer;
   font-weight: bold;
   color: #5b5b5b;
+  box-shadow: 0px 4px 4px rgba(223, 223, 223, 0.25);
   background-color: #ffffff;
   border-radius: 15px;
 `;
@@ -82,6 +84,7 @@ const AnswerBox = styled.button`
 const ImageBox = styled.img`
   width: 15rem;
   border-radius: 15px;
+  box-shadow: 0px 5px 4px 0px rgba(197, 179, 223, 0.25);
 `;
 
 const Finish = styled.div`
