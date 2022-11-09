@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchPage from "./SearchPage";
-import DetailBox from "./DetailBox";
 
 function Router() {
   return (
@@ -11,8 +10,8 @@ function Router() {
           element={<SearchPage />}
         >
           <Route
-            path=":gitID"
-            element={<DetailBox />}
+            path=":userName"
+            element={<SearchPage />}
           />
         </Route>
       </Routes>
