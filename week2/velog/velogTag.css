@@ -1,0 +1,35 @@
+body {
+    height: 100%;
+    background-color: rgb(249, 253, 255);
+}
+
+.input-tag {
+    width: 100px;
+    border: none;
+    outline: none;
+    background-color: none;
+    background: none;
+}
+
+.input-tag:focus {
+    outline: none;
+    border: none;
+    border: 0;
+}
+
+.tag-container {
+    display: flex;
+    margin: 20px 0;
+    border: none;
+}
+
+.tag-container > .tag {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    margin: 5px;
+    color: #41a67f;
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
