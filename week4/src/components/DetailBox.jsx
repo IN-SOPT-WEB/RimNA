@@ -64,14 +64,14 @@ const Background = styled.div`
   /* flex-grow: 1; */
   width: 30em;
   height: 30em;
-  background-color: rgba(148, 178, 163, 0.7);
+  background-color: rgba(125, 173, 150, 0.7);
   flex-direction: column;
   align-items: center;
   display: flex;
   padding-bottom: 10px;
   border-radius: 15px;
   justify-content: space-evenly;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+  box-shadow: 6px 6px 6px rgba(255, 255, 255, 0.25);
 `;
 
 const Image = styled.img`
@@ -126,7 +126,7 @@ const Name = styled.h2`
 
 const VisitBtn = styled.a`
   background-color: rgba(179, 228, 180, 0.2);
-  border: 2px solid #8ead93;
+  border: 1px solid #ffffff;
   cursor: pointer;
   padding: 10px;
   text-decoration: none;

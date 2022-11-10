@@ -4,18 +4,24 @@ import styled from "styled-components";
 import DetailBox from "./DetailBox";
 
 export default function SearchPage() {
+  const navigage = useNavigate();
+
+  const outside = useRef();
   const [userName, setUserName] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
   const [historyVisible, setHistoryVisible] = useState(false);
-  const outside = useRef();
-
-  const navigage = useNavigate();
 
   const onChangeName = (e) => {
     if (e.key === "Enter") {
       const newText = e.target.value;
       setUserName(newText);
-      setSearchHistory([...searchHistory, newText]);
+
+      //history 중복검사 한 후 넣기
+      const newArray = [...searchHistory, newText];
+      const set = new Set(newArray);
+      const uniqueArr = [...set];
+      setSearchHistory(uniqueArr);
+
       setHistoryVisible(false);
       navigage(`/search/${newText}`);
       e.preventDefault();
@@ -32,7 +38,7 @@ export default function SearchPage() {
     setSearchHistory(newHistory);
   };
 
-  const handleModalClose = (e) => {
+  const handleHistoryClose = (e) => {
     if (historyVisible && outside.current === e.target) {
       setHistoryVisible(false);
     }
@@ -41,7 +47,7 @@ export default function SearchPage() {
   return (
     <Background
       ref={outside}
-      onClick={(e) => handleModalClose(e)}
+      onClick={(e) => handleHistoryClose(e)}
     >
       <Container>
         <Title>Github Profile Finder</Title>
@@ -80,7 +86,8 @@ const Background = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #c2ddcb;
+  background: linear-gradient(45deg, #6d9f7d, #9fdeb4, #4e8e63);
+  /* ?background-color: #c2ddcb; */
 `;
 
 const Container = styled.div`
@@ -97,7 +104,7 @@ const Container = styled.div`
 
 const Title = styled.p`
   margin: 0;
-  color: #59855f;
+  color: white;
   font-weight: bold;
   font-size: 2em;
 `;
